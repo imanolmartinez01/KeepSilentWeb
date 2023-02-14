@@ -4,26 +4,45 @@ import { db } from './../firebaseConfig';
 import { collection, getDocs } from "firebase/firestore";
 
 
-export const getProjects = async () => {
-    let projects = [];
+export const getPlayers = async () => {
+    let players = [];
     const data = await getDocs(
-        collection(db, 'Projects/')
+        collection(db, 'players/')
     );
 
     //Agregar cada doc al array docs
     data.forEach((childSnapshot) => {
         var id = childSnapshot.id;
         var data = childSnapshot.data();
-        projects.push({
+        players.push({
             id: id,
-            title: data.title,
+            name: data.name,
             description: data.description,
             image: data.image,
             tags: data.tags,
-            accomplishments: data.accomplishments,
             source: data.source,
             visit: data.visit,
         });
     });
-    return projects;
+    return players;
+};
+
+export const getPodcasts = async () => {
+    let podcasts = [];
+    const data = await getDocs(
+        collection(db, 'podcasts/')
+    );
+
+    //Agregar cada doc al array docs
+    data.forEach((childSnapshot) => {
+        var id = childSnapshot.id;
+        var data = childSnapshot.data();
+        podcasts.push({
+            id: id,
+            name: data.name,
+            description: data.description,
+            source: data.source,
+        });
+    });
+    return podcasts;
 };

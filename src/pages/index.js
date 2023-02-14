@@ -1,29 +1,25 @@
-import Acomplishments from '../components/Acomplishments/Acomplishments';
-import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
+import VideoHero from '../components/VideoHero/VideoHero';
 import Hero from '../components/Hero/Hero';
-import Projects from '../components/Projects/Projects';
-import Technologies from '../components/Technologies/Technologies';
+import Players from '../components/Players/Players';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
-import { Section } from '../styles/GlobalComponents';
-import Experience from '../components/Experiences/Experience';
-import Snippets from '../components/Snippets/Snippets';
+import Podcasts from '../components/Podcasts/Podcasts';
 import React from 'react'
+import Products from '../components/Products/Products';
 
 
 const Home = () => {
   return (
     <Layout>
-      <Section grid>
-        <Hero />
-        <BgAnimation />
-      </Section>
+      <VideoHero />
+      <Hero />
       <Timeline />
-      <Technologies />
-      <Experience />
-      <Projects />
-      <Snippets />
-      <Acomplishments />
+      <Podcasts />
+      {/* <Technologies />
+      <Experience /> */}
+      <Players />
+      <Products />
+      {/* <Acomplishments /> */}
     </Layout>
   );
 };

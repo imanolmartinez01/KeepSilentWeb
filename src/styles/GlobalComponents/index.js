@@ -54,13 +54,37 @@ export const SectionTitle = styled.h2`
   }
 `
 
+
+export const SectionSubTitle = styled.p`
+  max-width: 800px;
+  font-size: 22px;
+  line-height: 40px;
+  font-weight: 300;
+  padding-bottom: 1rem;
+  color: rgba(255, 255, 255, 1);
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    max-width: 670px;
+    font-size: 20px;
+    line-height: 32px;
+    padding-bottom: 24px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 16px;
+  }
+`
+
+
 export const SectionText = styled.p`
   max-width: 800px;
   font-size: 24px;
   line-height: 40px;
   font-weight: 300;
   padding-bottom: 3.6rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;
@@ -77,14 +101,13 @@ export const SectionText = styled.p`
 `
 
 export const SectionDivider = styled.div`
-
   width: 64px;
   height: 6px;
   border-radius: 10px;
   background-color: #fff;
   background: ${(props) => props.colorAlt ? 
-    'linear-gradient(270deg, #e3ce00 0%, #945DD6 100%)' :
-    'linear-gradient(270deg, #e3ce00 0%, #945DD6 100%)'};
+    'linear-gradient(270deg, #e3ce00 0%, #880808 100%)' :
+    'linear-gradient(270deg, #e3ce00 0%, #880808 100%)'};
 
     margin: ${(props) => props.divider ? "4rem 0" : "" };
 
@@ -168,21 +191,26 @@ export const SecondaryBtn = styled.button`
 
 export const ButtonBack = styled.div`
   width: ${({ alt }) => alt ? '150px' : '262px'};
-  height: ${({ alt }) => alt ? '52px' : '64px'};
+  height: ${({ alt }) => alt ? '52px' : '45px'};
   border-radius: 50px;
   font-size: ${({ alt }) => alt ? '20px' : '24px'};
   font-weight: 600;
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: ${({ alt, form }) => (alt || form) ? '0' : '0 0 80px'};
   color: #fff;
-  background: ${({ alt }) => alt ? 'linear-gradient(270deg, #e3ce00 0%, #B133FF 100%)' : 'linear-gradient(270deg, #e3ce00 0%, #B133FF 100%)'};
+  margin-left: auto;
+  margin-right: auto;
+  background: ${({ alt }) => alt ? 'linear-gradient(270deg, #e3ce00 0%, #880808 100%)' : 'linear-gradient(270deg, #e3ce00 0%, #880808 100%)'};
   cursor: pointer;
   transition: 0.5s ease;
   position: relative;
   overflow: hidden;
   opacity: ${({ disabled }) => disabled ? '.5' : '1'};
+
+  &:hover {
+    align-items: center;
+    justify-content: center;
+  }
 
   @media ${(props) => props.theme.breakpoints.md} {
     width: ${({ alt }) => alt ? '150px' : '184px'};
@@ -209,7 +237,7 @@ export const ButtonFront = styled.button`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${({ alt }) => alt ? 'linear-gradient(270deg, #e3ce00 0%, #945DD6 100%)' : 'linear-gradient(270deg, #e3ce00 0%, #945DD6 100%)'};
+  background: ${({ alt }) => alt ? 'linear-gradient(270deg, #e3ce00 0%, #880808 100%)' : 'linear-gradient(270deg, #e3ce00 0%, #880808 100%)'};
   opacity: ${({ disabled }) => disabled ? '.5' : '1'};
   transition: .4s ease;
   font-size: ${({ alt }) => alt ? '20px' : '24px'};
@@ -231,7 +259,7 @@ export const ButtonFront = styled.button`
   }
 
   &:disabled{
-    background: linear-gradient(270deg, #b7a600 0%, #B133FF 100%);
+    background: linear-gradient(270deg, #b7a600 0%, #880808 100%);
     opacity: 0.5;
     box-shadow: inset 0px 2px 1px rgba(46, 49, 55, 0.15), inset 0px 0px 4px rgba(20, 20, 55, 0.3);
   }

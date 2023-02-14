@@ -1,54 +1,46 @@
 import Link from 'next/link';
 import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillInstagram, AiFillLinkedin, AiFillYoutube } from 'react-icons/ai';
 import { DiCodeigniter } from 'react-icons/di';
 
-import { Container, Span, Div1, Div2, Div3, NavLink, SocialIcons } from './HeaderStyles';
+import { Container, Span, Div1, Div2, Div3, NavLink, SocialIcons, Img, ImgKeep } from './HeaderStyles';
 
 const Header = () =>  (
   <Container>
     <Div1>
       <Link href="/">
         <a style={{ display: "flex", alignItems: "center", color: 'white', marginBottom: '15px' }} href="">
-          <DiCodeigniter size="2rem" /> <Span>&nbsp;&nbsp;Imanol</Span>
+        <Img src='/images/logoSoloCara.png' /><ImgKeep src='/images/letrasKeepSilentLogo.png' />
         </a>
       </Link>
     </Div1>
     <Div2>
     <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
+        <Link href="#collective">
+          <NavLink>Collective</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#technologies">
-          <NavLink>Technologies</NavLink>
+        <Link href="#podcasts">
+          <NavLink>Podcasts</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#experience">
-          <NavLink>Experience</NavLink>
+        <Link href="#players">
+          <NavLink>Players</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#projects">
-          <NavLink>Projects</NavLink>
-        </Link>
-      </li>   
-      <li>
-        <Link href="#snippets">
-          <NavLink>Snippets</NavLink>
+        <Link href="#contact">
+          <NavLink>Contact</NavLink>
         </Link>
       </li>     
     </Div2>
     <Div3>
-      <SocialIcons target="_blank" href="https://github.com/imanolmartinez01">
-        <AiFillGithub size="3rem" />
+      <SocialIcons target="_blank" href="https://www.instagram.com/keepsilent.soy/">
+        <AiFillYoutube size="3rem" />
       </SocialIcons>
-      <SocialIcons target="_blank" href="https://linkedin.com/in/imanol-martinez01">
-        <AiFillLinkedin size="3rem" />
-      </SocialIcons>
-      <SocialIcons target="_blank" href="https://instagram.com/imanolmusic/">
+      <SocialIcons target="_blank" href="https://www.youtube.com/@keepsilent5117/videos">
         <AiFillInstagram size="3rem" />
       </SocialIcons>
     </Div3>

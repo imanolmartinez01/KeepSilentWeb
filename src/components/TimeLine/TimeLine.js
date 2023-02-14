@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionDivider, SectionText, SectionTitle, SectionSubTitle } from '../../styles/GlobalComponents';
 import { TimeLineData } from '../../constants/constants';
 
 const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
@@ -10,46 +10,50 @@ const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
   const carouselRef = useRef();
 
-  const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
-  }
+  // const scroll = (node, left) => {
+  //   return node.scrollTo({ left, behavior: 'smooth' });
+  // }
 
-  const handleClick = (e, i) => {
-    e.preventDefault();
+  // const handleClick = (e, i) => {
+  //   e.preventDefault();
 
-    if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
+  //   if (carouselRef.current) {
+  //     const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
       
-      scroll(carouselRef.current, scrollLeft);
-    }
-  }
+  //     scroll(carouselRef.current, scrollLeft);
+  //   }
+  // }
 
-  const handleScroll = () => {
-    if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
+  // const handleScroll = () => {
+  //   if (carouselRef.current) {
+  //     const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
 
-      setActiveItem(index);
-    }
-  }
+  //     setActiveItem(index);
+  //   }
+  // }
 
   // snap back to beginning of scroll when window is resized
   // avoids a bug where content is covered up if coming from smaller screen
-  useEffect(() => {
-    const handleResize = () => {
-      scroll(carouselRef.current, 0);
-    }
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     scroll(carouselRef.current, 0);
+  //   }
 
-    window.addEventListener('resize', handleResize);
-  }, []);
+  //   window.addEventListener('resize', handleResize);
+  // }, []);
 
   return (
-    <Section id="about">
+    <Section id="collective">
       <SectionDivider />
-      <SectionTitle>About Me</SectionTitle>
+      <SectionTitle>COLLECTIVE</SectionTitle>
+      <SectionSubTitle>- What is KeepSilent?</SectionSubTitle>
       <SectionText>
-      Self-taught, curious and kind person. I'm happy when I grow. I like to be part of a team. 
-I am an entrepreneur in any field. I like to create and be creative. I manage an artist collective called KeepSilent. Also I produce music with machines as the name of IMANOL. At this moment I work as a Professional Rugby Player that why I like to be part of a team but finishing this stage to continue working as developer.</SectionText>
-      <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
+      We are a collective of DJs and producers from Barcelona that participates/carries out cultural events in which local art and audiovisual experiences are promoted. The group is made up of 6 artists with an average of more than 7 years of experience in the field. We participate in vinyl and live mode in clubs in Barcelona such as Bridge 48, Club Soda, Studio Time among others. We also share a booth with renowned artists.
+      </SectionText>
+      <SectionSubTitle>- What do we do?</SectionSubTitle>
+      <SectionText>
+      We participate music clubs in and around Barcelona, ​​providing everything from music to music equipment. To achieve an exclusive and different event, we curate well-known DJs from the underground scene who mix with vinyl and Live artists who promote everything from Jazz, HipHop to House, DeepHouse, TechHouse, Techno and Electro music. We create spaces with music and art according to the context where one can feel respected, moved and stimulated. We collaborate with a photo and video production company, DoctArt Producciones, to generate multimedia content for future publications and marketing strategies.      </SectionText>
+      {/* <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
         {TimeLineData.map((item , index) => (
                       <CarouselMobileScrollNode
@@ -112,8 +116,7 @@ I am an entrepreneur in any field. I like to create and be creative. I manage an
             </CarouselButton>
           );
         })}
-      </CarouselButtons>
-      <SectionDivider />
+      </CarouselButtons> */}
     </Section>
   );
 };
