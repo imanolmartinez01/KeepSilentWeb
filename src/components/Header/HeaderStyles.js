@@ -82,8 +82,7 @@ export const NavLink = styled.a`
     color: #fff;
     opacity: 1;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
+    
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
